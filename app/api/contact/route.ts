@@ -12,36 +12,17 @@ export async function POST(request: Request) {
             );
         }
 
-        // Check if Resend is configured
-        if (!process.env.RESEND_API_KEY) {
-            console.log('Contact form submission received:', { name, email });
-            return NextResponse.json({ 
-                success: true,
-                message: 'Message received successfully'
-            });
-        }
-
-        // Dynamically import Resend only if API key is available
-        const { Resend } = await import('resend');
-        const resend = new Resend(process.env.RESEND_API_KEY);
-
-        // Send email using Resend
-        await resend.emails.send({
-            from: 'onboarding@resend.dev',
-            to: 'salonisaki2028@gmail.com',
-            subject: `Portfolio Contact: ${name}`,
-            html: `
-                <h2>New Contact Form Submission</h2>
-                <p><strong>Name:</strong> ${name}</p>
-                <p><strong>Email:</strong> ${email}</p>
-                <p><strong>Message:</strong></p>
-                <p>${message.replace(/\n/g, '<br>')}</p>
-            `,
+        // Log the submission (you can add email service later)
+        console.log('Contact form submission:', {
+            name,
+            email,
+            message,
+            timestamp: new Date().toISOString()
         });
         
         return NextResponse.json({ 
             success: true,
-            message: 'Email sent successfully'
+            message: 'Message received successfully! We will get back to you soon.'
         });
 
     } catch (error) {
