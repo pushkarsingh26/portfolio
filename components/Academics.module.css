@@ -1,0 +1,61 @@
+.educationCard {
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+@media (min-width: 768px) {
+    .educationCard {
+        padding: 2.5rem;
+    }
+}
+
+.iconBox {
+    padding: 0.75rem;
+    border-radius: 0.75rem;
+    background: linear-gradient(to bottom right, rgba(59, 130, 246, 0.2), rgba(168, 85, 247, 0.2));
+}
+
+.courseCard {
+    padding: 1rem;
+    border-radius: 0.75rem;
+    background: linear-gradient(to bottom right, rgba(59, 130, 246, 0.1), rgba(168, 85, 247, 0.1));
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.courseCard:hover {
+    border-color: rgba(168, 85, 247, 0.3);
+}
+
+.courseText {
+    font-size: 0.875rem;
+    text-align: center;
+    color: rgb(209, 213, 219);
+}
+
+.achievementCard {
+    padding: 1.5rem;
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+}
+
+.achievementCard:hover {
+    border-color: rgba(168, 85, 247, 0.3);
+}
+
+.achievementIconBox {
+    padding: 0.75rem;
+    border-radius: 0.75rem;
+    background: linear-gradient(to bottom right, rgba(168, 85, 247, 0.2), rgba(236, 72, 153, 0.2));
+}
+
+.courseworkContainer {
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+@media (min-width: 768px) {
+    .courseworkContainer {
+        padding: 2.5rem;
+    }
+}
