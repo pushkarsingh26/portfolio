@@ -260,7 +260,17 @@ function FloatingLabelInput({
     focused,
     onFocus,
     onBlur,
-}: any) {
+}: {
+    id: string;
+    label: string;
+    type: string;
+    placeholder: string;
+    value: string;
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    focused: boolean;
+    onFocus: () => void;
+    onBlur: () => void;
+}) {
     return (
         <div className="relative">
             <motion.label
@@ -301,7 +311,16 @@ function FloatingLabelTextarea({
     focused,
     onFocus,
     onBlur,
-}: any) {
+}: {
+    id: string;
+    label: string;
+    placeholder: string;
+    value: string;
+    onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+    focused: boolean;
+    onFocus: () => void;
+    onBlur: () => void;
+}) {
     return (
         <div className="relative">
             <motion.label
@@ -329,7 +348,14 @@ function FloatingLabelTextarea({
     );
 }
 
-function ContactLink({ href, icon: Icon, label, value, color, external }: any) {
+function ContactLink({ href, icon: Icon, label, value, color, external }: {
+    href: string;
+    icon: any;
+    label: string;
+    value: string;
+    color: string;
+    external?: boolean;
+}) {
     return (
         <motion.a
             href={href}
