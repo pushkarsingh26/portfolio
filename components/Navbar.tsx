@@ -128,19 +128,6 @@ export default function Navbar() {
                                 </Link>
                             </motion.div>
                         ))}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: navLinks.length * 0.1 }}
-                        >
-                            <Link
-                                href="/contact"
-                                className="py-3 px-6 bg-gradient-to-r from-[#7C3AED] to-[#EC4899] text-white font-semibold rounded-xl text-center block"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                            >
-                                Let's Build
-                            </Link>
-                        </motion.div>
                     </div>
                 </motion.div>
             )}

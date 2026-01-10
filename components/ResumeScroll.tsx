@@ -5,6 +5,9 @@ import { Document, Page, pdfjs } from 'react-pdf';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './Resume.module.css';
 
+// Import react-pdf styles for annotations
+import 'react-pdf/dist/Page/AnnotationLayer.css';
+
 // Configure PDF.js worker
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
@@ -101,7 +104,7 @@ export default function ResumeScroll({ isOpen, onToggle }: ResumeScrollProps) {
                                                         pageNumber={index + 1}
                                                         width={pageWidth}
                                                         renderTextLayer={false}
-                                                        renderAnnotationLayer={false}
+                                                        renderAnnotationLayer={true}
                                                     />
                                                 </div>
                                             ))}
